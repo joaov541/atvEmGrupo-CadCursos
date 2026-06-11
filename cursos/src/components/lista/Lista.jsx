@@ -1,8 +1,8 @@
 import "./Lista.css";
 
 // Importação de imagens:
-import Editar from "../../assets/img/pen-to-square-solid.svg";
-import Excluir from "../../assets/img/trash-can-regular.svg";
+import Editar from "../../assets/images/pen-to-square-solid.svg";
+import Excluir from "../../assets/images/trash-can-regular.svg";
 
 const Lista = (props) => {
     return (
@@ -62,7 +62,7 @@ const Lista = (props) => {
                                                 <td data-cell="Nome">
                                                     <img
                                                         className="cartaz"
-                                                        src={`https://localhost:7159/imagens/${item.imagem}`}
+                                                        src={`https://localhost:5174/imagens/${item.imagem}`}
                                                         alt={item.titulo}
                                                     />
                                                 </td>

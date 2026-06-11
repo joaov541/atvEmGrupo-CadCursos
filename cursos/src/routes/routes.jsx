@@ -1,8 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import CadastroFilme from "./pages/cadastroFilme/CadastroFilme";
-import CadastroGenero from "./pages/cadastroGenero/CadastroGenero";
-import Login from "./pages/login/Login";
-import PrivateRoute from "./routes/PrivateRoute";
+import CadastroCurso from "../cadastroCurso/CadastroCurso";
+import CadastroArea from "../cadastroArea/CadastroArea";
+import Login from "../login/Login";import PrivateRoute from "./PrivateRoute";
 
 export const Rotas = () => {
     return(
@@ -13,16 +12,16 @@ export const Rotas = () => {
                 <Route 
                 element={
                     <PrivateRoute>
-                        <CadastroFilme/>
+                        <CadastroCurso/>
                     </PrivateRoute>
-                } path="/filmes"/> 
+                } path="/curso"/> 
 
                 <Route 
                 element={
                     <PrivateRoute>
-                        <CadastroGenero/>
+                        <CadastroArea/>
                     </PrivateRoute>
-                } path="/generos"/> 
+                } path="/area"/> 
                 
             </Routes>
         </BrowserRouter>

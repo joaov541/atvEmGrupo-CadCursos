@@ -1,5 +1,5 @@
 import "./Header.css";
-import Logo from "../../assets/img/logo.svg"
+import Logo from "../../assets/images/ChatGPT Image 11 de jun. de 2026, 16_14_52.png"
 import { Link } from "react-router-dom";
 import { UsuarioContext } from "../../context/UsuarioContext"
 import { useContext } from "react"
