@@ -3,7 +3,7 @@
 # -> id
  */
 header{
-    background-color: #CC3F55;
+    background-color: #1642ad;
 
     height: 75px;
 
@@ -37,7 +37,7 @@ header{
     height: 30px;
     border: none;
     cursor: pointer;
-    background-color: #73061B;
+    background-color: #011b68;
     color: white;
     border-radius: 6px;
     /* Negrito */
@@ -46,7 +46,7 @@ header{
 }
 
 .btn_logout:hover{
-    background-color: #520515;
+    background-color: #010445;
 }
 
 .themebutton{

@@ -1,5 +1,6 @@
 wwwroot\images.cs
 wwwroot\images\07aafa68-fc02-49ff-b1b6-1568f7962fde.jpg
 wwwroot\images\2d37eadd-bbbc-49c6-9ff4-632d05d8719e.jpg
+wwwroot\images\3866d507-6283-4854-a231-4cb283e88242.jpg
 wwwroot\images\eb5bf69c-1be3-48a5-ae2a-04bb9bd308ad.webp
 wwwroot\images\ec91833e-077e-45a3-a93e-1a700dfd7a88.jpg

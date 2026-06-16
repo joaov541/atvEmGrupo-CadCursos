@@ -13,7 +13,7 @@ public partial class Usuario
     [Key]
     [StringLength(40)]
     [Unicode(false)]
-    public string IdUsuario { get; set; } = null!;
+    public string IdUsuario { get; set; } = Guid.NewGuid().ToString();
 
     [StringLength(100)]
     [Unicode(false)]

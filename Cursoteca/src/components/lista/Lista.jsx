@@ -21,7 +21,7 @@ const Lista = (props) => {
                             <tr className="table_cabecalho">
                                 <th style={{ display: props.visibilidade }}>Imagem</th>
                                 <th>Nome</th>
-                                <th style={{ display: props.visibilidade }}>Gênero</th>
+                                <th style={{ display: props.visibilidade }}>Área</th>
                                 <th>Editar</th>
                                 {props.fnResumo && <th>Resumo</th>}
                                 <th>Excluir</th>

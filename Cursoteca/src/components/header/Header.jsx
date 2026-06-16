@@ -1,5 +1,5 @@
 import "./Header.css";
-import Logo from "../../assets/img/logo.svg"
+import Logo from "../../assets/img/ChatGPT Image 16_06_2026, 13_46_25.png"
 import { Link } from "react-router-dom";
 import { UsuarioContext } from "../../context/UsuarioContext"
 import { useContext } from "react"
@@ -26,16 +26,16 @@ const Header = () => {
         <header>
             <div className="layout_grid cabecalho">
                 <Link to="/">
-                    <img src={Logo} alt="Logo do Filmoteca" />
+                    <img src={Logo} alt="Logo da Cursoteca" />
                 </Link>
 
                 <nav className="nav_header">
-                    <Link className="link_header" to="/filmes">
-                        Filme
+                    <Link className="link_header" to="/cursos">
+                        Curso
                     </Link>
 
-                    <Link className="link_header" to="/generos">
-                        Gênero
+                    <Link className="link_header" to="/areas">
+                        Área
                     </Link>
 
                     {/* <button className="themebutton"
