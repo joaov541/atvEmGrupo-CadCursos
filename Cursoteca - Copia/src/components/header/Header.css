@@ -1,0 +1,78 @@
+/* seletor:
+. -> classe
+# -> id
+ */
+header{
+    background-color: #CC3F55;
+
+    height: 75px;
+
+    /* Borda: */
+    box-shadow: 1px 4px 4px 0px #00000055;
+    position: relative;
+}
+
+.cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.cabecalho img{
+    height: 60px;
+}
+
+.link_header{
+    margin-left: 45px;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.btn_logout{
+     width: 80px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #73061B;
+    color: white;
+    border-radius: 6px;
+    /* Negrito */
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+.btn_logout:hover{
+    background-color: #520515;
+}
+
+.themebutton{
+     background-color: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+}
+
+.themebutton:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px){
+    .cabecalho img{
+        height: 35px;
+    }
+
+    .link_header{
+        margin-left: 10px;
+    }
+}
