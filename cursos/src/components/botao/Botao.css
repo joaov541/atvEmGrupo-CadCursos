@@ -4,7 +4,7 @@
     height: 30px;
     border: none;
     cursor: pointer;
-    background-color: #73061B;
+    background-color: #0073c0;
     color: white;
     border-radius: 6px;
     /* Negrito */
@@ -12,14 +12,14 @@
 }
 
 .botao:hover{
-    background-color: #520515;
+    background-color: #0d16ba;
 }
 
 .btn_arquivo{
     width: 201px;
     height: 30px;
 
-    background-color: #73061B;
+    background-color: #0073c0;
     color: white;
 
     border: none;
@@ -34,7 +34,7 @@
 }
 
 .btn_arquivo:hover{
-     background-color: #520515;
+     background-color: #0d16ba;
 }
 
 .campo_cad_imagem{

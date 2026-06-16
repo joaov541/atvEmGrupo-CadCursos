@@ -1,0 +1,47 @@
+.botao{
+    /* padding: 5px 100px; */
+    width: 200px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #011b68;
+    color: white;
+    border-radius: 6px;
+    /* Negrito */
+    font-weight: bolder;
+}
+
+.botao:hover{
+    background-color: #010445;
+}
+
+.btn_arquivo{
+    width: 201px;
+    height: 30px;
+
+    background-color: #73061B;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn_arquivo:hover{
+     background-color: #520515;
+}
+
+.campo_cad_imagem{
+    display: flex;
+    flex-direction: column;
+}
+
+.campo_cad_imagem label:first-child{
+    margin-bottom: 7px;
+}
