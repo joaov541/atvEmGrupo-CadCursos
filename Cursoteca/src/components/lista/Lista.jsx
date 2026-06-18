@@ -35,14 +35,14 @@ const Lista = (props) => {
                                     <tr
                                         className="item_lista"
                                         key={
-                                            props.tipoLista === "genero"
-                                                ? item.idGenero
-                                                : item.idFilme
+                                            props.tipoLista === "area"
+                                                ? item.idArea
+                                                : item.idCurso
                                         }
                                     >
 
                                         {/* LISTA DE GÊNEROS */}
-                                        {props.tipoLista === "genero" ? (
+                                        {props.tipoLista === "curso" ? (
                                             <>
                                                 <td data-cell="Nome">
                                                     {item.nome}
@@ -58,7 +58,7 @@ const Lista = (props) => {
                                             </>
                                         ) : (
                                             <>
-                                                {/* LISTA DE FILMES */}
+                                                {/* LISTA DE Curso */}
 
                                                 {/* CARTAZ AGORA NA COLUNA NOME */}
                                                 <td data-cell="Nome">
@@ -77,9 +77,9 @@ const Lista = (props) => {
                                                     {item.titulo}
                                                 </td>
 
-                                                {/* GÊNERO */}
+                                                {/* Área */}
                                                 <td
-                                                    data-cell="Gênero"
+                                                    data-cell="Area"
                                                     style={{ display: props.visibilidade }}
                                                 >
                                                     {item.idGeneroNavigation?.nome || "-"}

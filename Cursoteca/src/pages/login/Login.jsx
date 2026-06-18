@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
-import LogoTipo from "../../assets/img/ChatGPT Image 16_06_2026, 13_46_25.png";
+import LogoTipo from "../../assets/img/Group 1.png";
 
 import Botao from "../../components/botao/Botao";
 import { UsuarioContext } from "../../context/UsuarioContext";

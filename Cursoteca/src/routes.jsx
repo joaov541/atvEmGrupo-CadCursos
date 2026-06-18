@@ -18,9 +18,9 @@ export const Rotas = () => {
                 <Route
                     path="/cursos"
                     element={
-                      <PrivateRoute>
+                      
                           <CadastroCurso />
-                      </PrivateRoute>
+                      
                         
                     }
                 />
@@ -28,9 +28,9 @@ export const Rotas = () => {
                 <Route
                     path="/areas"
                     element={
-                        <PrivateRoute>
+                      
                             <CadastroArea />
-                        </PrivateRoute>
+                       
                     }
                 />
 

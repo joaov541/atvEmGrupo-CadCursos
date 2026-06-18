@@ -5,24 +5,20 @@ export const Alerta = ({
      title, 
      text, 
      icon, 
-     showCancelButton = null,
-     confirmButtonText = null,
-     cancelButtonText = null,
+     showCancelButton = false, // Mudado de null para false (padrão do Swal)
+     confirmButtonText = "OK", // Deixando "OK" como padrão para evitar botões vazios
+     cancelButtonText = "Cancelar", // Deixando "Cancelar" como padrão
      cancelButtonColor = "#d33",
-    confirmButtonColor = "#d6a100ff",
-
-    }) => {
+     confirmButtonColor = "#d6a100", // CORRIGIDO: Removido o "ff" daqui!
+}) => {
     return Swal.fire({
         title,
         text,
         icon,
-        showCancelButton: showCancelButton,
-        confirmButtonText: confirmButtonText,
-        cancelButtonText: cancelButtonText,
+        showCancelButton,
+        confirmButtonText,
+        cancelButtonText,
         confirmButtonColor,
         cancelButtonColor,
-     })
-    
+    })
 }
-
-
