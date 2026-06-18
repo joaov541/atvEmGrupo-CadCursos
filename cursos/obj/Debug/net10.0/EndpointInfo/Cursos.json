@@ -54,17 +54,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Area"
+                "$ref": "#/components/schemas/AreaDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Area"
+                "$ref": "#/components/schemas/AreaDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Area"
+                "$ref": "#/components/schemas/AreaDTO"
               }
             }
           }
@@ -170,35 +170,6 @@
             "description": "OK"
           }
         }
-      },
-      "put": {
-        "tags": [
-          "Cursos"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Curso"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Curso"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Curso"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
       }
     },
     "/api/Cursos/{id}": {
@@ -216,6 +187,58 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cursos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Nome": {
+                    "type": "string"
+                  },
+                  "IdArea": {
+                    "type": "string"
+                  },
+                  "Imagem": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Nome": {
+                  "style": "form"
+                },
+                "IdArea": {
+                  "style": "form"
+                },
+                "Imagem": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -308,26 +331,15 @@
   },
   "components": {
     "schemas": {
-      "Area": {
+      "AreaDTO": {
         "type": "object",
         "properties": {
           "idArea": {
-            "maxLength": 40,
-            "minLength": 0,
             "type": "string",
             "nullable": true
           },
           "nome": {
-            "maxLength": 100,
-            "minLength": 0,
             "type": "string",
-            "nullable": true
-          },
-          "cursos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Curso"
-            },
             "nullable": true
           }
         },
@@ -339,39 +351,6 @@
           "nome": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Curso": {
-        "type": "object",
-        "properties": {
-          "idCurso": {
-            "maxLength": 40,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "imagem": {
-            "maxLength": 100,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "nome": {
-            "maxLength": 100,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "idArea": {
-            "maxLength": 40,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "idAreaNavigation": {
-            "$ref": "#/components/schemas/Area"
           }
         },
         "additionalProperties": false

@@ -84,11 +84,17 @@ public class AreaController : ControllerBase
         }
     }
     [HttpPut]
-    public IActionResult Put(Area areaAtualizada)
+    public IActionResult Put(AreaDTO dto)
     {
         try
         {
-            _areaRepository.AtualizarIdCorpo(areaAtualizada);
+            var area = new Area
+            {
+                IdArea = dto.IdArea,
+                Nome = dto.Nome
+            };
+
+            _areaRepository.AtualizarIdCorpo(area);
 
             return NoContent();
         }

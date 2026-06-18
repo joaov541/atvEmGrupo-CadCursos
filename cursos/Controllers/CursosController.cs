@@ -96,12 +96,23 @@ public class CursosController : ControllerBase
         }
     }
 
-    [HttpPut]
-    public IActionResult Put(Curso cursoAtualizado)
+
+    [HttpPut("{id}")]
+    public IActionResult Put(string id, [FromForm] CriarCurso dto)
     {
         try
         {
-            _cursosRepository.AtualizarIdCorpo(cursoAtualizado);
+            var curso = _cursosRepository.BuscarPorId(id);
+
+            if (curso == null)
+            {
+                return NotFound();
+            }
+
+            curso.Nome = dto.Nome;
+            curso.IdArea = dto.IdArea;
+
+            _cursosRepository.AtualizarIdCorpo(curso);
 
             return NoContent();
         }

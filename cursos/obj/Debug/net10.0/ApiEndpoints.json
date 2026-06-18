@@ -34,8 +34,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "areaAtualizada",
-        "Type": "Cursos.Models.Area",
+        "Name": "dto",
+        "Type": "Cursos.DTO.AreaDTO",
         "IsRequired": true
       }
     ],
@@ -111,22 +111,6 @@
   },
   {
     "ContainingType": "Cursos.Controllers.CursosController",
-    "Method": "Put",
-    "RelativePath": "api/Cursos",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "cursoAtualizado",
-        "Type": "Cursos.Models.Curso",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Cursos.Controllers.CursosController",
     "Method": "GetById",
     "RelativePath": "api/Cursos/{id}",
     "HttpMethod": "GET",
@@ -137,6 +121,37 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cursos.Controllers.CursosController",
+    "Method": "Put",
+    "RelativePath": "api/Cursos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "Nome",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdArea",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagem",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
