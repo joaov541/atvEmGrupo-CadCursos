@@ -113,6 +113,8 @@ app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
 app.UseAuthentication();
+// ATIVE ISTO NO PROGRAM.CS DO BACKEND:
+app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();

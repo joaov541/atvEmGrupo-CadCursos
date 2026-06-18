@@ -31,7 +31,7 @@ const Cadastro = (props) => {
                         }}
                     >
                         <div className="campo_cad_genero">
-                            <label htmlFor="genero">Gênero</label>
+                            <label htmlFor="genero">Área</label>
 
                             <select
                                 value={props.genero}
@@ -42,8 +42,9 @@ const Cadastro = (props) => {
                                 {Array.isArray(props.listaGeneros) &&
                                     props.listaGeneros.map((g) => (
                                         <option
-                                            key={g.idGenero}
-                                            value={g.idGenero}
+                                            /* CORREÇÃO: Verifica dinamicamente se o ID correto é idArea ou idGenero */
+                                            key={g.idArea ?? g.idGenero}
+                                            value={g.idArea ?? g.idGenero}
                                         >
                                             {g.nome}
                                         </option>

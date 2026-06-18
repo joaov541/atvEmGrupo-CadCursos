@@ -11,39 +11,32 @@ import { Alerta } from "../../components/alerta/Alerta";
 const CadastroArea = () => {
 
     const [valor, setValor] = useState("");
-
     const [idEditar, setIdEditar] = useState(0);
     const [editar, setEditar] = useState(false);
-
     const [listaAreas, setListaAreas] = useState([]);
 
     // CADASTRAR ÁREA
     const cadastrarArea = async (e) => {
-
         e.preventDefault();
 
         if (valor.trim().length === 0) {
-
             Alerta({
                 title: "Cadastro de Área",
                 text: "Área deve ser preenchida antes de cadastrar!",
                 icon: "warning",
                 confirmButtonText: "OK",
             });
-
             return false;
         }
 
         const objCadastro = {
-            nome: valor
+            nome: valor.trim()
         };
 
         try {
-
             const retornoAPI = await api.post("/Area", objCadastro);
 
             if (retornoAPI.status === 201 || retornoAPI.status === 200) {
-
                 Alerta({
                     title: "Cadastro de Área",
                     text: `Área ${objCadastro.nome} cadastrada com sucesso!`,
@@ -53,9 +46,7 @@ const CadastroArea = () => {
 
                 limparFormulario();
                 getAreas();
-
             } else {
-
                 Alerta({
                     title: "Cadastro de Área",
                     text: "Houve algum problema para cadastrar...",
@@ -63,11 +54,8 @@ const CadastroArea = () => {
                     confirmButtonText: "OK",
                 });
             }
-
         } catch (error) {
-
-            console.log(error);
-
+            console.error(error);
             Alerta({
                 title: "Cadastro de Área",
                 text: "Erro na chamada da API...",
@@ -88,7 +76,6 @@ const CadastroArea = () => {
 
     // EXCLUIR ÁREA
     const excluirArea = async (item) => {
-
         const result = await Alerta({
             title: "Você tem certeza?",
             text: "Você não poderá reverter isso!",
@@ -104,12 +91,13 @@ const CadastroArea = () => {
             return;
         }
 
-        try {
+        const idExcluir = item.idArea || item.idGenero || item.id;
 
-            await api.delete(`/Area/${item.idArea}`);
+        try {
+            await api.delete(`/Area/${idExcluir}`);
 
             const novaLista = listaAreas.filter(
-                area => area.idArea !== item.idArea
+                area => (area.idArea || area.idGenero || area.id) !== idExcluir
             );
 
             setListaAreas(novaLista);
@@ -120,11 +108,8 @@ const CadastroArea = () => {
                 icon: "success",
                 confirmButtonText: "OK",
             });
-
         } catch (error) {
-
-            console.log(error);
-
+            console.error(error);
             Alerta({
                 title: "Excluir Área",
                 text: "Erro ao excluir a área.",
@@ -136,58 +121,51 @@ const CadastroArea = () => {
 
     // PRÉ-EDIÇÃO
     const preEditar = (item) => {
-        setIdEditar(item.idArea);
+        const id = item.idArea || item.idGenero || item.id;
+        setIdEditar(id);
         setValor(item.nome);
         setEditar(true);
     };
 
-    // EDITAR ÁREA
+    // EDITAR ÁREA (RESOLVIDO PARA A PORTA 7023)
     const editarArea = async (e) => {
-
         e.preventDefault();
 
         if (valor.trim().length === 0) {
-
             Alerta({
                 title: "Editar Área",
                 text: "Área deve ser preenchida.",
                 icon: "warning",
                 confirmButtonText: "OK",
             });
-
             return false;
         }
 
+        // Monta o JSON contendo os nomes possíveis de ID que a API mapeia internamente
         const objEditar = {
-            nome: valor
+            idArea: idEditar,
+            idGenero: idEditar,
+            id: idEditar,
+            nome: valor.trim()
         };
 
         try {
+            // CORREÇÃO CRÍTICA: Removido o "/${idEditar}" da URL para não estourar o erro 405
+            const retornoAPI = await api.put("/Area", objEditar);
 
-            const retornoAPI = await api.put(
-                `/Area/${idEditar}`,
-                objEditar
-            );
-
-            if (
-                retornoAPI.status === 200 ||
-                retornoAPI.status === 204
-            ) {
-
+            if (retornoAPI.status === 200 || retornoAPI.status === 204) {
                 const novaLista = listaAreas.map((area) => {
-
-                    if (area.idArea === idEditar) {
+                    const idAreaAtual = area.idArea || area.idGenero || area.id;
+                    if (idAreaAtual === idEditar) {
                         return {
                             ...area,
-                            nome: valor
+                            nome: valor.trim()
                         };
                     }
-
                     return area;
                 });
 
                 limparFormulario();
-
                 setListaAreas(novaLista);
 
                 Alerta({
@@ -195,20 +173,15 @@ const CadastroArea = () => {
                     text: "Área editada com sucesso!",
                     icon: "success"
                 });
-
             } else {
-
                 Alerta({
                     title: "Editar Área",
                     text: "Erro ao editar a área.",
                     icon: "error"
                 });
             }
-
         } catch (error) {
-
-            console.log(error);
-
+            console.error("Erro detalhado na requisição:", error.response || error);
             Alerta({
                 title: "Editar Área",
                 text: "Erro na chamada da API.",
@@ -221,17 +194,12 @@ const CadastroArea = () => {
 
     // GET ÁREAS
     const getAreas = async () => {
-
         try {
-
             const retornoAPI = await api.get("/Area");
-
-            setListaAreas(retornoAPI.data);
-
+            setListaAreas(retornoAPI.data || []);
         } catch (error) {
-
-            console.log(error);
-
+            console.error(error);
+            setListaAreas([]);
             Alerta({
                 title: "Cadastro de Área",
                 text: "Erro ao retornar os dados.",
@@ -247,41 +215,27 @@ const CadastroArea = () => {
     return (
         <>
             <Header />
-
             <main>
-
                 <Cadastro
                     tituloCadastro="Cadastro de Áreas"
                     visibilidade="none"
                     placeholder="área"
-
                     valor={valor}
                     setValor={setValor}
-
                     cancelarEdicao={limparFormulario}
-
-                    funcCadastro={
-                        editar
-                            ? editarArea
-                            : cadastrarArea
-                    }
-
+                    funcCadastro={editar ? editarArea : cadastrarArea}
                     btnEditar={editar}
                 />
 
                 <Lista
                     tituloLista="Lista de Áreas"
                     visibilidade="none"
-
                     lista={listaAreas}
                     tipoLista="genero"
-
                     funcExcluir={excluirArea}
                     funcEditar={preEditar}
                 />
-
             </main>
-
             <Footer />
         </>
     );

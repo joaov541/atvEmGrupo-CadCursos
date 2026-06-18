@@ -1,9 +1,9 @@
 import "./Lista.css";
 
 // Importação de imagens:
-import Editar from "../../assets/img/pen-to-square-solid.svg";
-import Excluir from "../../assets/img/trash-can-regular.svg";
-import Visualizar from "../../assets/img/eye.svg"
+import Editar from "../../assets/img/streamline-ultimate_pen-write-bold.png";
+import Excluir from "../../assets/img/fa7-solid_trash.png";
+import Visualizar from "../../assets/img/Vector (2).png"
 
 const Lista = (props) => {
     return (
@@ -35,54 +35,55 @@ const Lista = (props) => {
                                     <tr
                                         className="item_lista"
                                         key={
-                                            props.tipoLista === "area"
+                                            props.tipoLista === "genero" || props.tipoLista === "area"
                                                 ? item.idArea
                                                 : item.idCurso
                                         }
                                     >
 
-                                        {/* LISTA DE GÊNEROS */}
-                                        {props.tipoLista === "curso" ? (
+                                        {/* VERIFICAÇÃO SE É O TIPO GÊNERO/ÁREA */}
+                                        {props.tipoLista === "genero" || props.tipoLista === "area" ? (
                                             <>
+                                                {/* Esconde a coluna da imagem */}
+                                                <td style={{ display: props.visibilidade }}></td>
+
+                                                {/* Mostra apenas o nome da Área */}
                                                 <td data-cell="Nome">
                                                     {item.nome}
                                                 </td>
 
-                                                <td
-                                                    style={{ display: props.visibilidade }}
-                                                ></td>
-
-                                                <td
-                                                    style={{ display: props.visibilidade }}
-                                                ></td>
+                                                {/* Esconde a coluna da área descritiva */}
+                                                <td style={{ display: props.visibilidade }}></td>
                                             </>
                                         ) : (
                                             <>
-                                                {/* LISTA DE Curso */}
+                                                {/* SE FOR CURSO (RENDERIZAÇÃO PADRÃO COM IMAGEM) */}
+                                                <td data-cell="Imagem" style={{ display: props.visibilidade }}>
+                                                    {item.imagem ? (
+                                                        <img
+                                                            className="cartaz"
+                                                            /* CORREÇÃO 1: Pasta 'images' minúscula e extensão dinâmica do banco (.webp, .png, etc) */
+                                                            src={`https://localhost:7023/images/${item.imagem}`}
+                                                            alt={item.nome}
+                                                            onError={(e) => {
+                                                                // Corta o loop infinito imediatamente desativando o trigger
+                                                                e.target.onerror = null; 
+                                                                // Placeholder padrão caso a imagem não exista de fato no servidor
+                                                                e.target.src = "https://placehold.co/80x50?text=Sem+Foto";
+                                                            }}
+                                                        />
+                                                    ) : (
+                                                        <div className="sem-foto">Sem Foto</div>
+                                                    )}
+                                                </td>
 
-                                                {/* CARTAZ AGORA NA COLUNA NOME */}
                                                 <td data-cell="Nome">
-                                                    <img
-                                                        className="cartaz"
-                                                        src={`https://localhost:7159/imagens/${item.imagem}`}
-                                                        alt={item.titulo}
-                                                    />
+                                                    {item.nome}
                                                 </td>
 
-                                                {/* TÍTULO AGORA NA COLUNA IMAGEM */}
-                                                <td
-                                                    data-cell="Imagem"
-                                                    style={{ display: props.visibilidade }}
-                                                >
-                                                    {item.titulo}
-                                                </td>
-
-                                                {/* Área */}
-                                                <td
-                                                    data-cell="Area"
-                                                    style={{ display: props.visibilidade }}
-                                                >
-                                                    {item.idGeneroNavigation?.nome || "-"}
+                                                <td data-cell="Area" style={{ display: props.visibilidade }}>
+                                                    {/* CORREÇÃO 2: Busca o nome textual da Área ("T.I") usando o GUID idArea vindo da API */}
+                                                    {props.listaGeneros?.find(g => g.idArea === item.idArea || g.idGenero === item.idArea)?.nome || "-"}
                                                 </td>
                                             </>
                                         )}
@@ -97,7 +98,7 @@ const Lista = (props) => {
                                             </button>
                                         </td>
 
-                                        {/* Vizualizar Resumo */}
+                                        {/* Visualizar Resumo */}
                                         {props.fnResumo && (
                                             <td data-cell="Visualizar">
                                                 <button
@@ -108,8 +109,6 @@ const Lista = (props) => {
                                                 </button>
                                             </td>
                                         )}
-
-                                    
 
                                         {/* EXCLUIR */}
                                         <td data-cell="Excluir">
@@ -127,10 +126,11 @@ const Lista = (props) => {
                                 <tr>
                                     <td
                                         colSpan={
-                                            props.tipoLista === "genero"
+                                            props.tipoLista === "genero" || props.tipoLista === "area"
                                                 ? 3
-                                                : 5
+                                                : 6
                                         }
+                                        style={{ textAlign: "center", padding: "20px" }}
                                     >
                                         Nenhum registro encontrado.
                                     </td>
