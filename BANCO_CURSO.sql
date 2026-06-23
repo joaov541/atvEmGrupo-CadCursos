@@ -32,4 +32,4 @@ SELECT * FROM Curso;
 SELECT * FROM Usuario;
 
 DELETE FROM Usuario
-WHERE IdUsuario = 2;
+WHERE IdUsuario = 8;
