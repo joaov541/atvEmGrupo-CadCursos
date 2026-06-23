@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{48672B79-1421-E41F-4C95-D7FC49274BE6}|Cursos.csproj|c:\\users\\54198904880\\desktop\\atvemgrupo-cadcursos\\cursos\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48672B79-1421-E41F-4C95-D7FC49274BE6}|Cursos.csproj|solutionrelative:repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48672B79-1421-E41F-4C95-D7FC49274BE6}|Cursos.csproj|c:\\users\\54198904880\\desktop\\atvemgrupo-cadcursos\\cursos\\utils\\criptografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48672B79-1421-E41F-4C95-D7FC49274BE6}|Cursos.csproj|solutionrelative:utils\\criptografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{48672B79-1421-E41F-4C95-D7FC49274BE6}|Cursos.csproj|c:\\users\\54198904880\\desktop\\atvemgrupo-cadcursos\\cursos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48672B79-1421-E41F-4C95-D7FC49274BE6}|Cursos.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,19 +59,45 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAowFEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T17:56:11.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Criptografia.cs",
+              "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Utils\\Criptografia.cs",
+              "RelativeDocumentMoniker": "Utils\\Criptografia.cs",
+              "ToolTip": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Utils\\Criptografia.cs",
+              "RelativeToolTip": "Utils\\Criptografia.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T17:54:55.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAkwGgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwFEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-18T14:08:45.708Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "CursosController.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Controllers\\CursosController.cs",
               "RelativeDocumentMoniker": "Controllers\\CursosController.cs",
@@ -76,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CriarCurso.DTO.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\DTO\\CriarCurso.DTO.cs",
               "RelativeDocumentMoniker": "DTO\\CriarCurso.DTO.cs",
@@ -84,23 +118,25 @@
               "RelativeToolTip": "DTO\\CriarCurso.DTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T12:29:32.303Z"
+              "WhenOpened": "2026-06-18T12:29:32.303Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AreaController.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Controllers\\AreaController.cs",
               "RelativeDocumentMoniker": "Controllers\\AreaController.cs",
               "ToolTip": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Controllers\\AreaController.cs",
               "RelativeToolTip": "Controllers\\AreaController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAAAFYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAIBQwFYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T12:13:46.319Z"
+              "WhenOpened": "2026-06-18T12:13:46.319Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AreaDTO.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\DTO\\AreaDTO.cs",
               "RelativeDocumentMoniker": "DTO\\AreaDTO.cs",
@@ -108,11 +144,12 @@
               "RelativeToolTip": "DTO\\AreaDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T12:15:49.728Z"
+              "WhenOpened": "2026-06-18T12:15:49.728Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "CursosContext.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\BdContextCursos\\CursosContext.cs",
               "RelativeDocumentMoniker": "BdContextCursos\\CursosContext.cs",
@@ -120,11 +157,12 @@
               "RelativeToolTip": "BdContextCursos\\CursosContext.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAwwCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T12:07:21.872Z"
+              "WhenOpened": "2026-06-18T12:07:21.872Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -132,11 +170,12 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-18T12:07:14.761Z"
+              "WhenOpened": "2026-06-18T12:07:14.761Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
@@ -144,11 +183,12 @@
               "RelativeToolTip": "Models\\Usuario.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAxwBYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T18:58:19.492Z"
+              "WhenOpened": "2026-06-16T18:58:19.492Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\54198904880\\Desktop\\atvEmGrupo-CadCursos\\cursos\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
@@ -156,7 +196,8 @@
               "RelativeToolTip": "Controllers\\UsuarioController.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAwCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T18:54:46.144Z"
+              "WhenOpened": "2026-06-16T18:54:46.144Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,4 +1,3 @@
-
 body{
     background-color: #f3f9ff;
 }
@@ -8,9 +7,7 @@ body{
     color: #000000;
 
     padding: 50px 0;
-
 }
-
 
 .campo_cad_imagem {
     display: flex;
@@ -24,11 +21,18 @@ body{
     
     border-bottom: 2px solid #0c0ca0;
     padding-bottom: 20px;
-        box-shadow: 0px 4px 4px 0px #00000045;
+    box-shadow: 0px 4px 4px 0px #00000045;
+
+    border-radius: 20px;
 }
 
 .form_cadastro h1{
     text-transform: uppercase;
+    display: inline-block; 
+    background: linear-gradient(45deg, #0c0ca0, #003cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .form_cadastro hr {
@@ -38,9 +42,7 @@ body{
     border-width: 1px;
     border-color: #140e61;
     margin-top: 5px;
-    
 }
-
 
 .campos_cadastro{
     display: flex;
@@ -51,21 +53,24 @@ body{
     align-items: flex-end;
 }
 
-
-/* modificando o input e select */
 .campo_cad_nome input,
 .campo_cad_genero select
 {
-    border:none;
+    border: none;
     border-radius: 6px;
     outline: none;
     padding: 0 5px;
     width: 300px;
-    height: 30px;
-
+    height: 40px;
+    border: 1px solid rgb(232, 232, 232);
     box-shadow: 1px 4px 4px 0px #00000045;
-    
+    transition: background-color 0.2s ease;
     margin-top: 7px;
+}
+
+.campo_cad_nome input:hover,
+.campo_cad_genero select:hover{
+    background-color: #f0f0f0;
 }
 
 .campo_cad_genero,
@@ -74,19 +79,61 @@ body{
     flex-direction: column;
 }
 
+@media screen and (max-width: 1024px) {
+    .campos_cadastro {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
 
-
-@media screen and (max-width: 880px) {
-    .campos_cadastro{
+@media screen and (max-width: 768px) {
+    .campos_cadastro {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+    }
+
+    .campo_cad_nome,
+    .campo_cad_genero,
+    .campo_cad_imagem {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .campo_cad_nome input,
+    .campo_cad_genero select {
+        width: 100%;
+    }
+
+    .form_cadastro {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form_cadastro h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .form_cadastro hr {
+        max-width: 200px;
+    }
+
+    .campo_cad_nome,
+    .campo_cad_genero,
+    .campo_cad_imagem {
+        max-width: 100%;
     }
 }
 
 @media screen and (max-width: 340px) {
-    .form_cadastro h1{
+    .form_cadastro h1 {
         font-size: 20px;
     }
+
+    .campos_cadastro {
+        gap: 15px;
+    }
 }
-
-

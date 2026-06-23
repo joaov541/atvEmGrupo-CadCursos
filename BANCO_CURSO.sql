@@ -30,3 +30,6 @@ CREATE TABLE Usuario(
 SELECT * FROM Area;
 SELECT * FROM Curso;
 SELECT * FROM Usuario;
+
+DELETE FROM Usuario
+WHERE IdUsuario = 2;

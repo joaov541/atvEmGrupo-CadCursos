@@ -2,8 +2,8 @@ import "./Lista.css";
 
 // Importação de imagens:
 import Editar from "../../assets/img/streamline-ultimate_pen-write-bold.png";
-import Excluir from "../../assets/img/fa7-solid_trash.png";
-import Visualizar from "../../assets/img/Vector (2).png"
+import Excluir from "../../assets/img/fa7-solid_trash (1).png";
+import Visualizar from "../../assets/img/fluent_document-bullet-list-20-filled.png"
 
 const Lista = (props) => {
     return (
@@ -94,7 +94,7 @@ const Lista = (props) => {
                                                 className="icon"
                                                 onClick={() => props.funcEditar(item)}
                                             >
-                                                <img src={Editar} alt="Editar" />
+                                                <img className="edit-img" src={Editar} alt="Editar" />
                                             </button>
                                         </td>
 

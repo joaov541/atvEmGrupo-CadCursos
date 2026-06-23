@@ -1,6 +1,7 @@
 ﻿using Cursos.BdContextCursos;
 using Cursos.Interfaces;
 using Cursos.Models;
+using Cursos.Utils;
 
 namespace Cursos.Repositories;
 
@@ -25,9 +26,11 @@ public class UsuarioRepository : IUsuarioRepository
         )!;
     }
 
-    public void Cadastrar(Usuario usuario)
+    public void Cadastrar(Usuario novoUsuario)
     {
-        _context.Usuarios.Add(usuario);
+        novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha!);
+
+        _context.Usuarios.Add(novoUsuario);
         _context.SaveChanges();
     }
 
@@ -65,9 +68,25 @@ public class UsuarioRepository : IUsuarioRepository
 
     public Usuario BuscarPorEmailESenha(string email, string senha)
     {
-        return _context.Usuarios.FirstOrDefault(
-            x => x.Email == email && x.Senha == senha
-        )!;
+        try
+        {
+            Usuario usuarioBuscado = _context.Usuarios.FirstOrDefault(u => u.Email == email)!;
+
+            if (usuarioBuscado != null)
+            {
+                bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+
+                if (confere)
+                {
+                    return usuarioBuscado;
+                }
+            }
+            return null!;
+        }
+        catch (Exception)
+        {
+            throw;
+        }
     }
     public Usuario BuscarPorEmail(string email)
     {

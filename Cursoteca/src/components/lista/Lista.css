@@ -9,15 +9,18 @@
     flex-direction: column;
     align-items: center;
 
-    padding: 40px 0;
-
+    padding: 30px 0;
+    border-radius: 10px;
     background-color: #f3f9ff;
     color: #000000;
 }
 
 .listagem h1{
     text-transform: uppercase;
-    color: #000000;
+     background: linear-gradient(45deg, #0c0ca0, #003cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .listagem hr {
@@ -30,16 +33,26 @@
 }
 
 .table_cabecalho {
-    background-color: #140e61; /* Substitua pela cor que desejar */
+    background-color: #140e61;
+    border-radius: 10px;
 }
 
 .table_cabecalho th {
-    color: #ffffff; /* Altera a cor do texto para branco para dar contraste, se necessário */
-    padding: 12px 0; /* Adiciona um espaçamento interno para o cabeçalho ficar mais elegante */
+    color: #ffffff;
+    padding: 12px 0;
 }
 
 .item_lista button img{
-    height: 28px;
+    height: 40px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-img{
+    height: 20px;
+}
+
+.item_lista button img:hover{
+    transform: translateY(-4px);
 }
 
 .cartaz {
@@ -73,7 +86,6 @@
 }
 
 .item_lista td{
-    /* desgrudar o item do titulo */
     padding: 20px 0 10px 0;
 }
 
@@ -85,33 +97,81 @@
 
 @media screen and (max-width: 768px){
 
-    /* 1px - 768px */
+    .tabela{
+        width: 100%;
+        overflow: hidden;
+    }
+
     .tabela thead{
         display: none;
     }
 
-    /* Um elemento abaixo do outro */
+    .item_lista{
+        display: block;
+
+        margin: 20px 10px;
+
+        padding: 20px;
+
+        border-radius: 10px;
+
+        box-shadow: 0 2px 8px rgba(0,0,0,.1);
+
+        background-color: #ffffff;
+    }
+
     .item_lista td{
         display: grid;
+
+        grid-template-columns: 100px 1fr;
+
+        align-items: center;
+
+        gap: 15px;
+
         text-align: left;
-        padding: 10px 10px 10px 0;
-        grid-template-columns: 10ch auto;
+
+        padding: 12px 0;
     }
 
     .item_lista td::before{
-        /* Adiciona o data-cell do html e coloca os : depois */
         content: attr(data-cell) ":";
+
         font-weight: 700;
-        width: 80px;
-        text-align: left;
+
+        color: #140e61;
     }
 
-    .item_lista td:last-child{
-        margin-bottom: 24px;
+    .cartaz{
+        width: 100%;
+        max-width: 250px;
+
+        height: auto;
+
+        margin: 0 auto;
+
+        display: block;
     }
 
-    .item_lista td:first-child{
-        margin-top: 24px;
+    .icon{
+        justify-self: start;
+    }
+}
+
+@media screen and (max-width: 480px){
+
+    .item_lista td{
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .item_lista td::before{
+        margin-bottom: 5px;
+    }
+
+    .cartaz{
+        max-width: 100%;
     }
 }
 

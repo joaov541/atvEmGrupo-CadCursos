@@ -30,6 +30,13 @@ header{
     color: white;
 
     text-decoration: none;
+
+    transition: background-color 0.2s ease;
+    
+}
+
+.link_header:hover{
+    color: #d4dcff;
 }
 
 .btn_logout{
@@ -43,10 +50,14 @@ header{
     /* Negrito */
     font-weight: bolder;
     margin-left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn_logout:hover{
-    background-color: #010445;
+     background-color: #010445;
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .themebutton{

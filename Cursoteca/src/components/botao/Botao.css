@@ -1,25 +1,26 @@
-.botao{
-    /* padding: 5px 100px; */
+.botao {
     width: 200px;
-    height: 30px;
+    height: 40px;
     border: none;
     cursor: pointer;
-    background-color: #011b68;
+    background-color: #032382;
     color: white;
     border-radius: 6px;
-    /* Negrito */
     font-weight: bolder;
+    transition: background-color 0.2s ease;
+    
+
 }
 
-.botao:hover{
+.botao:hover {
     background-color: #010445;
 }
 
-.btn_arquivo{
+.btn_arquivo {
     width: 201px;
-    height: 30px;
+    height: 40px;
 
-    background-color: #011b68;
+    background-color: #032382;
     color: white;
 
     border: none;
@@ -31,17 +32,78 @@
 
     cursor: pointer;
     font-weight: 600;
+
+    transition: background-color 0.2s ease;
+
 }
 
-.btn_arquivo:hover{
-     background-color: #010445;
+.btn_arquivo:hover {
+    background-color: #010445;
+    transition: 0.2s ease;
 }
 
-.campo_cad_imagem{
+.botao.btn-cancelar {
+    background-color: #b41515; 
+    color: #ffffff;       
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao.btn-cancelar:hover {
+    background-color: #7f0909; 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+}
+
+.campo_cad_imagem {
     display: flex;
     flex-direction: column;
 }
 
-.campo_cad_imagem label:first-child{
+.campo_cad_imagem label:first-child {
+    margin-bottom: 7px;
+}
+
+.botao, .btn_arquivo {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: #032382;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.btn_arquivo {
+    width: 201px; 
+    font-weight: 600; 
+}
+
+.botao:hover, .btn_arquivo:hover {
+    background-color: #010445;
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+}
+
+.botao:active, .btn_arquivo:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.campo_cad_imagem {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo_cad_imagem label:first-child {
     margin-bottom: 7px;
 }

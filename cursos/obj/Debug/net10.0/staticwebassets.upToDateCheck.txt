@@ -21,3 +21,8 @@ wwwroot\images\6d3ed936-cda7-4d41-9469-46eca1c49987.webp
 wwwroot\images\377e7c9f-4943-4fbc-97a9-3762291300be.webp
 wwwroot\images\22ac2590-6173-4ef3-b13a-c6106993392b.webp
 wwwroot\images\09486d13-8369-4236-884a-7638edcbbaa9.webp
+wwwroot\images\373a31a8-8752-4e41-a08a-9831688b709d.webp
+wwwroot\images\d84fb3a3-29e5-47d1-b3d2-b9e3861be7d8.webp
+wwwroot\images\7ce78cce-f1fe-4674-8d99-9d468bcbc0fe.webp
+wwwroot\images\98c5b78d-b315-4b92-8945-7ce8870d904e.webp
+wwwroot\images\5cb32e6c-c47a-4e14-8c7c-d8077f6e05ed.webp
